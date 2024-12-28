@@ -1,0 +1,275 @@
+/********** Global Variables **********/
+:root {
+    --primary: #6244C5;
+    --secondary: #FFC448;
+    --light: #FAFAFB;
+    --dark: #12141D;
+    --transition-speed: 0.5s;
+}
+
+/********** Global Styles **********/
+body {
+    background: linear-gradient(135deg, #05d6da, #018b74, #004b32); /* Gradient colors */
+    background-attachment: fixed; /* Ensures gradient stays fixed during scrolling */
+    background-size: cover; /* Ensures it covers the entire screen */
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--light);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color var(--transition-speed);
+}
+
+a:hover {
+    color: var(--primary);
+}
+
+/********** Utility Classes **********/
+.hidden {
+    display: none !important;
+}
+
+.my-6 {
+    margin: 6rem 0;
+}
+
+.py-6 {
+    padding: 6rem 0;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/********** Back-to-Top Button **********/
+.back-to-top {
+    position: fixed;
+    display: none;
+    right: 45px;
+    bottom: 45px;
+    z-index: 99;
+    background: var(--primary);
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity var(--transition-speed);
+}
+
+.back-to-top:hover {
+    background: var(--secondary);
+}
+
+/********** Spinner **********/
+#spinner {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition-speed) ease-out, visibility 0s linear 0.5s;
+    z-index: 99999;
+}
+
+#spinner.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+/********** Buttons **********/
+.btn {
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all var(--transition-speed) ease;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background: var(--secondary);
+}
+
+.btn-square {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border-radius: 5px;
+}
+
+.btn-square:hover {
+    background: var(--secondary);
+}
+
+/********** Navbar **********/
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform var(--transition-speed) ease-in-out, background-color var(--transition-speed);
+}
+
+.navbar.scrolled {
+    background: var(--light);
+    transform: translateY(0);
+}
+
+.navbar .nav-link {
+    font-size: 16px;
+    font-weight: 600;
+    padding: 15px;
+    color: var(--dark);
+    transition: color var(--transition-speed);
+}
+
+.navbar .nav-link:hover {
+    color: var(--primary);
+}
+
+.navbar-toggler {
+    border: none;
+    background: transparent;
+    outline: none;
+}
+
+/********** Header **********/
+#home {
+    background: url('../img/bg-header.png') no-repeat left top;
+    background-size: cover;
+    margin-bottom: 6rem;
+    text-align: center;
+    color: var(--dark);
+    padding: 8rem 2rem;
+}
+
+.typed-cursor {
+    font-size: 30px;
+    color: var(--dark);
+}
+
+/********** Typed Animation **********/
+.typed-text {
+    font-size: 24px;
+    color: var(--primary);
+    font-weight: bold;
+    display: inline-block;
+}
+
+/********** Play Button **********/
+.btn-play {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background: var(--primary);
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    transition: background var(--transition-speed);
+}
+
+.btn-play:hover {
+    background: var(--secondary);
+}
+
+.btn-play span {
+    position: relative;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 16px solid #fff;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+}
+
+/********** Keyframes for Pulse Animation **********/
+@keyframes pulse-border {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+/********** About Section **********/
+#about .years .display-1 {
+    font-size: 10rem;
+    line-height: 9rem;
+}
+
+#about .years h5 {
+    letter-spacing: 30px;
+    margin-right: -30px;
+    color: var(--secondary);
+}
+
+/********** Skills Section **********/
+#skill .progress {
+    height: 5px;
+    border-radius: 5px;
+    background: #f0f0f0;
+    overflow: hidden;
+}
+
+#skill .progress-bar {
+    width: 0;
+    height: 100%;
+    background: var(--primary);
+    transition: width 3s ease-in-out;
+}
+
+/********** Portfolio Section **********/
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+    transition: transform var(--transition-speed);
+}
+
+.portfolio-item:hover {
+    transform: scale(1.05);
+}
+
+.portfolio-img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/********** Testimonial Section **********/
+.testimonial-carousel {
+    position: relative;
+    padding: 2rem;
+}
+
+.testimonial-carousel .testimonial-icon {
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    border: 2px solid var(--secondary);
+    border-radius: 50%;
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
