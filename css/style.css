@@ -9,7 +9,7 @@
 
 /********** Global Styles **********/
 body {
-    background: linear-gradient(135deg, #05d6da, #018b74, #004b32); /* Gradient colors */
+    background: linear-gradient(135deg, #abcd47, #d5d6a5, #eaff00); /* Gradient colors */
     background-attachment: fixed; /* Ensures gradient stays fixed during scrolling */
     background-size: cover; /* Ensures it covers the entire screen */
     background-repeat: no-repeat;
